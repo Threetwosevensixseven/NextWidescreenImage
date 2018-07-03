@@ -19,7 +19,6 @@ namespace PaletteGenerator
             var dir = Path.GetDirectoryName(outFile);
             if (!Directory.Exists(dir))
                 Directory.CreateDirectory(dir);
-            var bytes = new List<Byte>();
             using (var img = new Bitmap(257, 193))
             {
                 using (Graphics g = Graphics.FromImage(img))
