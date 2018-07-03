@@ -32,9 +32,9 @@ namespace PaletteGenerator
                             int r3 = (i & 448) >> 6;
                             int g3 = (i & 56) >> 3;
                             int b3 = i & 7;
-                            int r8 = r3 + (r3 << 3) + ((r3 & 6) << 5);
-                            int g8 = g3 + (g3 << 3) + ((g3 & 6) << 5);
-                            int b8 = b3 + (b3 << 3) + ((b3 & 6) << 5);
+                            int r8 = (r3 << 5) + (r3 << 2) + ((r3 & 6) >> 1);
+                            int g8 = (g3 << 5) + (g3 << 2) + ((g3 & 6) >> 1);
+                            int b8 = (b3 << 5) + (b3 << 2) + ((b3 & 6) >> 1);
                             var rgb888 = Color.FromArgb(r8, g8, b8);
                             using (var brush = new SolidBrush(rgb888))
                                 g.FillRectangle(brush, h * 16, v * 6, 16, 6);
